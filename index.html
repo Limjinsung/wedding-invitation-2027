@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#f8f8f6">
+<meta name="description" content="임진성 ♥ 정나금의 결혼식에 초대합니다. 2027년 2월 28일 일요일 오후 5시, 제이오스티엘.">
+<title>임진성 ♥ 정나금 | 모바일 청첩장</title>
+<style>
+  :root { --paper:#f8f8f6; --brown:#855d3e; --soft:#e8d7b8; }
+  * { box-sizing:border-box; }
+  html { scroll-behavior:smooth; background:var(--paper); }
+  body { margin:0; color:var(--brown); background:var(--paper); font-family:system-ui,-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif; }
+  main { width:100%; max-width:560px; margin:0 auto; background:var(--paper); box-shadow:0 0 28px #5d412010; }
+  .page-wrap { position:relative; margin:0; padding:0; line-height:0; }
+  .page { display:block; width:100%; height:auto; }
+  .hotspot { position:absolute; display:block; border:0; background:transparent; padding:0; cursor:pointer; line-height:normal; }
+  .hotspot:focus-visible { outline:2px dashed #9b704d; outline-offset:2px; background:#ffffff22; }
+
+  .contact-hotspot { position:absolute; display:block; z-index:2; border-radius:8px; }
+  .contact-hotspot:focus-visible { outline:2px dashed #9b704d; outline-offset:2px; background:#ffffff55; }
+  /* 3페이지 연락처 6명: 각 전화·문자 아이콘 위에 투명 클릭 영역 배치 */
+  .groom-call, .groom-father-call, .groom-mother-call { left:21.3%; width:8.5%; height:4.2%; }
+  .groom-sms, .groom-father-sms, .groom-mother-sms { left:29.4%; width:8.5%; height:4.2%; }
+  .bride-call, .bride-father-call, .bride-mother-call { left:63.0%; width:8.5%; height:4.2%; }
+  .bride-sms, .bride-father-sms, .bride-mother-sms { left:71.2%; width:8.5%; height:4.2%; }
+  .contact-row-couple { top:59.7%; }
+  .contact-row-father { top:71.4%; }
+  .contact-row-mother { top:83.2%; }
+  .copy-address { left:36%; top:31.3%; width:28%; height:4.4%; }
+  .open-map { left:14%; top:22.5%; width:72%; height:7.3%; }
+  .account-groom { left:10%; top:63.4%; width:80%; height:8.1%; }
+  .account-bride { left:10%; top:73.3%; width:80%; height:8.1%; }
+  .top { position:fixed; right:max(14px, calc((100vw - 560px)/2 + 14px)); bottom:18px; z-index:10; border:1px solid #d7c2a2; background:#fffffff0; color:var(--brown); border-radius:999px; padding:10px 14px; font-size:13px; box-shadow:0 3px 12px #4d301a18; cursor:pointer; }
+  .notice { max-width:560px; margin:0 auto; padding:16px 18px 30px; text-align:center; font-size:12px; line-height:1.7; color:#9a8068; background:var(--paper); }
+  .toast { position:fixed; left:50%; bottom:76px; transform:translateX(-50%); z-index:30; max-width:calc(100vw - 32px); padding:11px 16px; border-radius:999px; background:#553b2b; color:white; font-size:13px; line-height:1.4; text-align:center; box-shadow:0 5px 20px #0002; opacity:0; pointer-events:none; transition:opacity .18s; }
+  .toast.show { opacity:1; }
+  .modal-backdrop { position:fixed; inset:0; z-index:40; background:#21170f88; display:none; align-items:center; justify-content:center; padding:20px; }
+  .modal-backdrop.show { display:flex; }
+  .modal { width:min(100%,360px); border-radius:18px; padding:24px 20px 20px; background:#fffefa; color:#765238; box-shadow:0 12px 48px #0003; text-align:center; line-height:1.65; }
+  .modal h2 { margin:0 0 10px; font-size:19px; }
+  .modal p { margin:0 0 18px; font-size:14px; }
+  .modal button { border:0; border-radius:999px; background:#8a6243; color:white; padding:10px 20px; font-size:14px; cursor:pointer; }
+  .account-list { display:grid; gap:12px; margin:16px 0 20px; text-align:left; max-height:min(52vh,420px); overflow:auto; }
+  .account-card { border:1px solid #eadfD2; border-radius:13px; padding:13px; background:#fff; }
+  .account-name { font-weight:700; font-size:15px; margin-bottom:7px; color:#63452f; }
+  .account-detail { font-size:13px; line-height:1.7; color:#765f4b; overflow-wrap:anywhere; }
+  .account-actions { display:flex; justify-content:flex-end; margin-top:10px; }
+  .account-copy { border:0; border-radius:999px; background:#8a6243; color:white; padding:8px 13px; font-size:12px; cursor:pointer; }
+  .account-copy:focus-visible, .modal button:focus-visible { outline:2px dashed #9b704d; outline-offset:3px; }
+  .map-options { display:grid; gap:10px; margin:18px 0 16px; }
+  .map-option { display:flex; align-items:center; justify-content:center; min-height:48px; border:1px solid #e6d7c5; border-radius:12px; background:#fff; color:#765238; text-decoration:none; font-size:15px; font-weight:600; }
+  .map-option:focus-visible { outline:2px dashed #9b704d; outline-offset:3px; }
+  .map-option:active { background:#f7f0e7; }
+  .modal .secondary-button { background:#eee7df; color:#765238; }
+  @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } .toast { transition:none; } }
+</style>
+</head>
+<body>
+<main id="top" aria-label="임진성 정나금 모바일 청첩장">
+  <section class="page-wrap" aria-label="1페이지 메인 청첩장"><img class="page" src="assets/page-1.jpg" alt="우리, 결혼합니다. 임진성 정나금, 2027년 2월 28일 오후 5시 제이오스티엘."></section>
+  <section class="page-wrap" aria-label="2페이지 초대 문구"><img class="page" src="assets/page-2.jpg" alt="세상에 하나뿐인 짝꿍, 결혼 초대 문구."></section>
+  <section class="page-wrap" aria-label="3페이지 연락처">
+    <img class="page" src="assets/page-3.jpg" alt="신랑 신부와 양가 부모님 연락처 안내. 신랑 임진성과 신부 정나금의 전화·문자 아이콘을 누르면 연락할 수 있습니다.">
+    <!-- 신랑·신부 -->
+    <a class="hotspot contact-hotspot groom-call contact-row-couple" href="tel:+821038134198" aria-label="신랑 임진성에게 전화하기" title="신랑에게 전화하기"></a>
+    <a class="hotspot contact-hotspot groom-sms contact-row-couple" href="sms:01038134198" aria-label="신랑 임진성에게 문자 보내기" title="신랑에게 문자 보내기"></a>
+    <a class="hotspot contact-hotspot bride-call contact-row-couple" href="tel:+821046346332" aria-label="신부 정나금에게 전화하기" title="신부에게 전화하기"></a>
+    <a class="hotspot contact-hotspot bride-sms contact-row-couple" href="sms:01046346332" aria-label="신부 정나금에게 문자 보내기" title="신부에게 문자 보내기"></a>
+    <!-- 신랑 측 부모님 -->
+    <a class="hotspot contact-hotspot groom-father-call contact-row-father" href="tel:+821089784198" aria-label="신랑 아버지 임재형에게 전화하기" title="신랑 아버지에게 전화하기"></a>
+    <a class="hotspot contact-hotspot groom-father-sms contact-row-father" href="sms:01089784198" aria-label="신랑 아버지 임재형에게 문자 보내기" title="신랑 아버지에게 문자 보내기"></a>
+    <a class="hotspot contact-hotspot groom-mother-call contact-row-mother" href="tel:+821091804198" aria-label="신랑 어머니 전정미에게 전화하기" title="신랑 어머니에게 전화하기"></a>
+    <a class="hotspot contact-hotspot groom-mother-sms contact-row-mother" href="sms:01091804198" aria-label="신랑 어머니 전정미에게 문자 보내기" title="신랑 어머니에게 문자 보내기"></a>
+    <!-- 신부 측 부모님 -->
+    <a class="hotspot contact-hotspot bride-father-call contact-row-father" href="tel:+821035096462" aria-label="신부 아버지 정종률에게 전화하기" title="신부 아버지에게 전화하기"></a>
+    <a class="hotspot contact-hotspot bride-father-sms contact-row-father" href="sms:01035096462" aria-label="신부 아버지 정종률에게 문자 보내기" title="신부 아버지에게 문자 보내기"></a>
+    <a class="hotspot contact-hotspot bride-mother-call contact-row-mother" href="tel:+821035106499" aria-label="신부 어머니 김영선에게 전화하기" title="신부 어머니에게 전화하기"></a>
+    <a class="hotspot contact-hotspot bride-mother-sms contact-row-mother" href="sms:01035106499" aria-label="신부 어머니 김영선에게 문자 보내기" title="신부 어머니에게 문자 보내기"></a>
+  </section>
+  <section class="page-wrap" aria-label="4페이지 예식 날짜와 달력"><img class="page" src="assets/page-4.jpg" alt="2027년 2월 28일 일요일 오후 5시, 제이오스티엘. 달력에서 예식일을 표시했습니다."></section>
+  <section class="page-wrap" aria-label="5페이지 위치 안내">
+    <img class="page" src="assets/page-5.jpg" alt="오시는 길. 서울특별시 구로구 경인로 565 제이오스티엘 2층 티파니홀. 약도 안내.">
+    <button class="hotspot open-map" type="button" aria-label="지도 앱 선택하기" title="원하는 지도 앱 선택하기"></button>
+    <button class="hotspot copy-address" type="button" aria-label="예식장 주소 복사" title="주소 복사"></button>
+  </section>
+  <section class="page-wrap" aria-label="6페이지 교통 및 주차 안내"><img class="page" src="assets/page-6.jpg" alt="지하철, 버스, 자가용 및 주차 안내."></section>
+  <section class="page-wrap" aria-label="7페이지 감사 인사"><img class="page" src="assets/page-7.jpg" alt="우리답게 오래오래. 감사 인사."></section>
+  <section class="page-wrap" aria-label="8페이지 마음 전하실 곳">
+    <img class="page" src="assets/page-8.jpg" alt="마음을 전하실 곳. 신랑 측과 신부 측 계좌 안내.">
+    <button class="hotspot account-groom" type="button" aria-label="신랑 측 계좌 안내 열기" data-side="신랑 측"></button>
+    <button class="hotspot account-bride" type="button" aria-label="신부 측 계좌 안내 열기" data-side="신부 측"></button>
+  </section>
+  <section class="page-wrap" aria-label="9페이지 마지막 인사"><img class="page" src="assets/page-9.jpg" alt="세상에 하나뿐인 짝꿍. 예식 날짜와 장소, 양가 부모님 성함, 주소."></section>
+</main>
+<footer class="notice">임진성 ♥ 정나금 · 2027년 2월 28일 일요일 오후 5시 · 제이오스티엘<br>신랑·신부 및 양가 부모님 연락처, 지도 앱 선택, 주소 복사, 계좌 안내 및 계좌번호 복사 기능이 적용된 모바일 청첩장 웹 시안입니다.</footer>
+<button class="top" type="button" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="맨 위로">↑ 맨 위로</button>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<div id="modalBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal">
+    <h2 id="modalTitle">계좌 정보</h2>
+    <div id="accountList" class="account-list"></div>
+    <button id="modalClose" type="button">닫기</button>
+  </div>
+</div>
+<div id="mapBackdrop" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="mapModalTitle">
+  <div class="modal">
+    <h2 id="mapModalTitle">어떤 지도로 길을 찾으시겠어요?</h2>
+    <p>원하는 지도 앱을 선택해 주세요.</p>
+    <div class="map-options">
+      <a class="map-option" href="https://map.naver.com/p/search/%EC%A0%9C%EC%9D%B4%EC%98%A4%EC%8A%A4%ED%8B%B0%EC%97%98" target="_blank" rel="noopener noreferrer">네이버 지도</a>
+      <a class="map-option" href="https://map.kakao.com/link/search/%EC%A0%9C%EC%9D%B4%EC%98%A4%EC%8A%A4%ED%8B%B0%EC%97%98" target="_blank" rel="noopener noreferrer">카카오맵</a>
+      <a class="map-option" href="https://www.google.com/maps/search/?api=1&amp;query=%EC%A0%9C%EC%9D%B4%EC%98%A4%EC%8A%A4%ED%8B%B0%EC%97%98%20%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B5%AC%EB%A1%9C%EA%B5%AC%20%EA%B2%BD%EC%9D%B8%EB%A1%9C%20565" target="_blank" rel="noopener noreferrer">구글 지도</a>
+    </div>
+    <button id="mapModalClose" class="secondary-button" type="button">닫기</button>
+  </div>
+</div>
+<script>
+(() => {
+  const address = '서울특별시 구로구 경인로 565 제이오스티엘';
+  const toast = document.getElementById('toast');
+  let toastTimer;
+  function showToast(message) {
+    toast.textContent = message;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => toast.classList.remove('show'), 2300);
+  }
+  document.querySelector('.copy-address').addEventListener('click', async () => {
+    try {
+      await navigator.clipboard.writeText(address);
+      showToast('예식장 주소를 복사했어요 ♡');
+    } catch (e) {
+      const field = document.createElement('textarea');
+      field.value = address; document.body.appendChild(field); field.select();
+      const ok = document.execCommand('copy'); field.remove();
+      showToast(ok ? '예식장 주소를 복사했어요 ♡' : address);
+    }
+  });
+  const mapBackdrop = document.getElementById('mapBackdrop');
+  document.querySelector('.open-map').addEventListener('click', () => {
+    mapBackdrop.classList.add('show');
+  });
+  document.getElementById('mapModalClose').addEventListener('click', () => mapBackdrop.classList.remove('show'));
+  mapBackdrop.addEventListener('click', e => { if (e.target === mapBackdrop) mapBackdrop.classList.remove('show'); });
+  const backdrop = document.getElementById('modalBackdrop');
+  const modalTitle = document.getElementById('modalTitle');
+  const accountList = document.getElementById('accountList');
+  const accounts = {
+    '신랑 측': [
+      { name: '신랑 임진성', bank: '우리은행', number: '1002553612601', holder: '임진성' },
+      { name: '신랑 아버지 임재형', bank: '농협은행', number: '3020991564201', holder: '임재형' },
+      { name: '신랑 어머니 전정미', bank: '국민은행', number: '53910101079755', holder: '전정미' }
+    ],
+    '신부 측': [
+      { name: '신부 정나금', bank: '신한은행', number: '110295866500', holder: '정성민' }
+    ]
+  };
+
+  async function copyAccount(account) {
+    const copyText = account.bank + ' ' + account.number + ' ' + account.holder;
+    try {
+      await navigator.clipboard.writeText(account.number);
+      showToast('계좌번호를 복사했어요 ♡');
+    } catch (e) {
+      const field = document.createElement('textarea');
+      field.value = account.number;
+      field.setAttribute('readonly', '');
+      field.style.position = 'fixed';
+      field.style.opacity = '0';
+      document.body.appendChild(field);
+      field.select();
+      const ok = document.execCommand('copy');
+      field.remove();
+      showToast(ok ? '계좌번호를 복사했어요 ♡' : '계좌번호 복사에 실패했어요. 다시 시도해 주세요.');
+    }
+  }
+
+  document.querySelectorAll('[data-side]').forEach(button => button.addEventListener('click', () => {
+    const side = button.dataset.side;
+    modalTitle.textContent = side + ' 계좌 안내';
+    accountList.replaceChildren();
+    (accounts[side] || []).forEach(account => {
+      const card = document.createElement('div');
+      card.className = 'account-card';
+
+      const name = document.createElement('div');
+      name.className = 'account-name';
+      name.textContent = account.name;
+
+      const detail = document.createElement('div');
+      detail.className = 'account-detail';
+      detail.textContent = account.bank + ' · ' + account.number + '\n예금주 ' + account.holder;
+      detail.style.whiteSpace = 'pre-line';
+
+      const actions = document.createElement('div');
+      actions.className = 'account-actions';
+      const copyButton = document.createElement('button');
+      copyButton.type = 'button';
+      copyButton.className = 'account-copy';
+      copyButton.textContent = '계좌번호 복사';
+      copyButton.addEventListener('click', () => copyAccount(account));
+
+      actions.appendChild(copyButton);
+      card.append(name, detail, actions);
+      accountList.appendChild(card);
+    });
+    backdrop.classList.add('show');
+  }));
+  document.getElementById('modalClose').addEventListener('click', () => backdrop.classList.remove('show'));
+  backdrop.addEventListener('click', e => { if (e.target === backdrop) backdrop.classList.remove('show'); });
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      backdrop.classList.remove('show');
+      mapBackdrop.classList.remove('show');
+    }
+  });
+})();
+</script>
+</body>
+</html>
